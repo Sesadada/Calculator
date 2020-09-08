@@ -2,7 +2,6 @@ body {
   margin: 0;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
-  color: pink;
 }
 
 .container {
@@ -11,22 +10,25 @@ body {
   justify-content: center;
   align-content: center;
   align-items: center;
-  background-color: lightpink;
+  background-color: rgb(247, 202, 208);
 }
 
 .total {
   display: grid;
-  background-color: rgb(245, 168, 91);
+  background-color: rgb(164, 230, 224);
   width: 26vw;
   height: 56vh;
   justify-content: center;
   align-content: center;
   align-items: center;
+  border-radius: 0.2em;
+  min-height: 18em;
 }
 
 .display {
+  border-radius: 0.2em;
   display: grid;
-  background-color: lightcoral;
+  background-color: rgb(241, 165, 165);
   text-align: right;
   padding: 0.4em;
   margin-bottom: 0.4rem;
@@ -51,8 +53,20 @@ body {
 }
 
 button {
-  color: coral;
+  color: rgb(241, 165, 165);
   height: 7vh;
   border: 1px white;
   margin: 2.1px;
+  font-family: inherit;
+  font-size: 1.2em;
+  border-radius: 0.2em;
+}
+
+button:hover {
+  background-color: rgb(235, 236, 157);
+  color: white;
+}
+
+button:focus {
+  outline: none;
 }
