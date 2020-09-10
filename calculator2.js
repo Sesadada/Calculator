@@ -42,12 +42,24 @@ cancel.addEventListener("click", () => {
 //----------------------------------display calculator
 const display = document.querySelector(".display");
 
-window.addEventListener("keydown", (e) => {
-  const key = document.querySelector(`button[data-key='${e.keyCode}']`);
-
-  key.click();
+const buttons = document.querySelectorAll("button");
+buttons.forEach(function (e) {
+  e.addEventListener("click", function (el) {
+    console.log(el.target.value + " clicked");
+  });
 });
-//
+window.addEventListener("keydown", (e) => {
+  const key = document.querySelector(`button[value='${e.key}']`);
+
+  if (key) {
+    key.click();
+  } else if (e.which == 13) {
+    equal.click();
+  } else if (e.which == 8) {
+    display.textContent = "0";
+    zero();
+  }
+});
 
 const nums = document.querySelectorAll(".operand"); //------------------numbers
 nums.forEach((num) => {
