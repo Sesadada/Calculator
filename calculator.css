@@ -9,9 +9,6 @@ body {
 
 /* GRADIENT A*/
 
-body {
-}
-
 @keyframes GradientBackground {
   0% {
     background-position: 0% 50%;
