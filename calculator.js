@@ -6,24 +6,9 @@ let displayNum = "";
 let displayNum2 = "";
 let result = 0;
 let operation;
-let temp;
+let temp = [];
+
 //----------------------------operator functions
-const add = (a, b) => {
-  return a + b;
-};
-
-const sustract = (a, b) => {
-  return a - b;
-};
-
-const multiply = (a, b) => {
-  return a * b;
-};
-
-const divide = (a, b) => {
-  return a / b;
-};
-
 const percent = (a, b) => {
   let one = a / 100;
   let two = one * b;
@@ -44,8 +29,8 @@ const zero = () => {
   op1 = "";
   op2 = "";
   result = 0;
-  numbers = [];
-  console.log("borrado");
+  temp = [];
+  console.log("display cleared");
 };
 
 const cancel = document.querySelector(".cancel");
@@ -53,10 +38,54 @@ cancel.addEventListener("click", () => {
   display.textContent = "0";
   zero();
 });
+//----------------------------------calculator
+const calculation = (operation, op1, op2) => {
+  if (operation == "+") {
+    result = op1 + op2;
+  } else if (operation == "-") {
+    result = op1 - op2;
+  } else if (operation == "*") {
+    result = op1 * op2;
+  } else if (operation == "/") {
+    if (op2 == 0) {
+      result = "not a bloody number";
+    } else {
+      result = op1 / op2;
+      result = Math.round((result + Number.EPSILON) * 100) / 100;
+    }
+  } else if (operation == "%") {
+    result = percent(op1, op2);
+    result = Math.round((result + Number.EPSILON) * 100) / 100;
+  }
+  if (isNaN(result)) result = "NOT a blody number";
+
+  return result;
+};
 
 //----------------------------------display calculator
-
 const display = document.querySelector(".display");
+
+const buttons = document.querySelectorAll("button");
+buttons.forEach(function (e) {
+  e.addEventListener("click", function (el) {
+    console.log(el.target.value + " clicked");
+  });
+});
+window.addEventListener("keydown", (e) => {
+  const key = document.querySelector(`button[value='${e.key}']`);
+  console.log(e.key);
+  if (key) {
+    key.click();
+  } else if (e.which == 13) {
+    equal.click();
+  } else if (e.which == 8) {
+    display.textContent = "0";
+    zero();
+  } else if (e.which == 27) {
+    display.textContent = "0";
+    zero();
+  }
+});
 
 const nums = document.querySelectorAll(".operand"); //------------------numbers
 nums.forEach((num) => {
@@ -64,9 +93,14 @@ nums.forEach((num) => {
     if (display.textContent == result) {
       zero();
     }
-    displayNum += num.value;
-    display.textContent = displayNum;
-    console.log(displayNum);
+    if (num.value == "." && displayNum.includes(".")) {
+      zero();
+      display.textContent = "not a valid number";
+      zero();
+    } else {
+      displayNum += num.value;
+      display.textContent = displayNum;
+    }
   });
 });
 
@@ -74,102 +108,42 @@ const operators = document.querySelectorAll(".operator"); //----------------oper
 operators.forEach((operator) => {
   operator.addEventListener("click", (e) => {
     if (display.textContent == result) {
-      // ------------------------------------------IN CASE THERE IS ALREADY A RESULT IN THE DISPLAY
       display.textContent = operator.value; // shows the operator in the display
-      operation = operator.value; // establishes which is the operation to do
-      op1 = result; // puts the result as number to add another number to (establishes OP1)
-      displayNum = ""; //it empties the displayNum container
-      console.log(
-        "This is the result we are going to add some number to " + Number(op1)
-      );
       operation = operator.value;
+      op1 = result;
+      displayNum = "";
+    } else if (op1) {
+      op2 = Number(displayNum);
+      if (operation == "+") {
+        op1 = op1 + op2;
+      } else if (operation == "-") {
+        op1 = op1 - op2;
+      } else if (operation == "*") {
+        op1 = op1 * op2;
+      } else if (operation == "/") {
+        if (op2 == 0) {
+          result = "the sky is the limit";
+        } else {
+          op1 = op1 / op2;
+          op1 = Math.round((result + Number.EPSILON) * 100) / 100;
+        }
+      }
     } else {
-      // ----------------------------------------------------IN CASE THERE IS NOTHING IN THE DISPLAY
-      display.textContent = operator.value; // shows the operator in the display
-      operation = operator.value; // establishes which is the operation to do
-      op1 = Number(displayNum); // establishes which is the OP1
-      displayNum = ""; // it empties the displayNum container
-      console.log("This is the first number " + Number(op1));
-      console.log(operator.value);
+      op1 = Number(displayNum);
     }
+    operation = operator.value;
+    display.textContent = operator.value;
+    displayNum = ""; // it empties the displayNum container
+    console.log(op1);
+    console.log(operator.value);
   });
 });
 
 const equal = document.querySelector(".equal"); //-----------------------result
 equal.addEventListener("click", (e) => {
   op2 = Number(displayNum);
-
-  if (operation == "+") {
-    result = add(Number(op1), Number(op2));
-  } else if (operation == "-") {
-    result = sustract(Number(op1), Number(op2));
-  } else if (operation == "*") {
-    result = multiply(Number(op1), Number(op2));
-  } else if (operation == "/") {
-    result = divide(Number(op1), Number(op2));
-    result = Math.round((result + Number.EPSILON) * 100) / 100;
-  } else if (operation == "%") {
-    result = percent(Number(op1), Number(op2));
-    result = Math.round((result + Number.EPSILON) * 100) / 100;
-  }
+  result = calculation(operation, op1, op2);
   display.textContent = result;
-  console.log("This is the result " + result);
+  console.log(op2);
+  console.log("Total " + result);
 });
-
-/*
-
-const equal = document.querySelector(".equal"); //-----------------------result
-equal.addEventListener("click", (e) => {
-  op2 = Number(displayNum);
-  console.log("This is another number " + Number(op2));
-  if (operation == "+") {
-    result = add(Number(op1), Number(op2));
-  } else if (operation == "-") {
-    result = sustract(Number(op1), Number(op2));
-  } else if (operation == "*") {
-    result = multiply(Number(op1), Number(op2));
-  } else if (operation == "/") {
-    result = divide(Number(op1), Number(op2));
-    result = Math.round((result + Number.EPSILON) * 100) / 100;
-  } else if (operation == "%") {
-    result = percent(Number(op1), Number(op2));
-    result = Math.round((result + Number.EPSILON) * 100) / 100;
-  }
-  display.textContent = result;
-  console.log("This is the result " + result);
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-(back operator + to adding in html)
-const adding = document.querySelector(".adding");
-adding.addEventListener("click", (e) => {
-  console.log("This is the first number " + displayNum);
-  op1 = displayNum;
-  displayNum = "";
-});
-
-const equal = document.querySelector(".equal");
-equal.addEventListener("click", (e) => {
-  op2 = displayNum;
-  console.log("This is the second number " + displayNum);
-  result = add(Number(op1), Number(op2));
-  display.textContent = result;
-  console.log("This is the result " + result);
-});
-*/
