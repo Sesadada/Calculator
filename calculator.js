@@ -57,7 +57,7 @@ const calculation = (operation, op1, op2) => {
     result = percent(op1, op2);
     result = Math.round((result + Number.EPSILON) * 100) / 100;
   }
-  if (isNaN(result)) result = "NOT a blody number";
+  if (isNaN(result)) result = "not a bloody number";
 
   return result;
 };
