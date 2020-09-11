@@ -2,9 +2,31 @@ body {
   margin: 0;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
-  background-color: rgb(247, 202, 208);
+  background: linear-gradient(186deg, #d422b1, #ffce00);
+  background-size: 400% 400%;
+  animation: GradientBackground 18s ease infinite;
 }
 
+/* GRADIENT A*/
+
+body {
+}
+
+@keyframes GradientBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* SERENA */
 .container {
   display: grid;
   min-height: 95vh;
@@ -29,7 +51,7 @@ body {
 .display {
   border-radius: 0.2em;
   display: grid;
-  background-color: rgb(241, 165, 165);
+  background-color: #e7727c;
   text-align: right;
   padding: 0.4em;
   margin-bottom: 0.4rem;
@@ -54,7 +76,7 @@ body {
 }
 
 button {
-  color: rgb(241, 165, 165);
+  color: #e7727c;
   height: 7vh;
   border: 1px white;
   margin: 2.1px;
