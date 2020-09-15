@@ -119,6 +119,9 @@ button:focus {
 }
 
 @media (max-width: 480px) {
+  body {
+    overflow-x: hidden;
+  }
   .container {
     height: 70vh;
     width: 90vw;
