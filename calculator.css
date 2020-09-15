@@ -66,6 +66,8 @@ body {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr, 1fr;
   gap: 0.1rem;
+  min-height: 18em;
+  min-width: 10em;
 }
 
 #zero {
@@ -89,4 +91,23 @@ button:hover {
 
 button:focus {
   outline: none;
+}
+
+@media (max-width: 768px) {
+  .nums {
+    height: 60vh;
+    width: 80vw;
+  }
+  .nums button {
+    height: 9vh;
+  }
+  .total {
+    height: 90vh;
+    width: 90vw;
+  }
+  .display {
+    height: 8vh;
+    width: 75vw;
+    margin-bottom: 5vh;
+  }
 }
