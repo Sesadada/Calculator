@@ -47,7 +47,7 @@ body {
 
 .display {
   border-radius: 0.2em;
-  display: grid;
+
   background-color: #e7727c;
   text-align: right;
   padding: 0.4em;
@@ -94,12 +94,17 @@ button:focus {
 }
 
 @media (max-width: 768px) {
+  body {
+    height: 100%;
+    width: 100%;
+    background-color: mediumturquoise;
+  }
   .container {
     height: 100%;
     width: 100%;
   }
   .nums {
-    width: 80%;
+    width: 100%;
   }
   .nums button {
     height: 9vh;
@@ -107,16 +112,16 @@ button:focus {
     border: whitesmoke;
   }
   .total {
-    height: 90vh;
-    width: 90vw;
+    height: 100vh;
+    width: 100vw;
+    background-color: mediumturquoise;
     justify-content: center;
     align-content: center;
     align-items: center;
-    border-radius: 0.2em;
   }
   .display {
     height: 8vh;
-    width: 75vw;
+    width: 90vw;
     margin-bottom: 5vh;
   }
 }
