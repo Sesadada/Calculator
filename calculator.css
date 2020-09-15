@@ -94,14 +94,18 @@ button:focus {
 }
 
 @media (max-width: 768px) {
+  .container {
+    height: 100vh;
+    width: 100vw;
+  }
   .nums {
     height: 60vh;
     width: 80vw;
   }
   .nums button {
     height: 9vh;
-    border: 1px whitesmoke;
     font-size: 2em;
+    border: whitesmoke;
   }
   .total {
     height: 100vh;
