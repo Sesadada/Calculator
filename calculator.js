@@ -76,12 +76,12 @@ window.addEventListener("keydown", (e) => {
   console.log(e.key);
   if (key) {
     key.click();
-  } else if (e.which == 13) {
+  } else if (e.key == "Enter") {
     equal.click();
-  } else if (e.which == 8) {
+  } else if (e.key == "Backspace") {
     display.textContent = "0";
     zero();
-  } else if (e.which == 27) {
+  } else if (e.key == "Escape") {
     display.textContent = "0";
     zero();
   }
