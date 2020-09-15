@@ -99,8 +99,7 @@ button:focus {
     width: 100%;
   }
   .nums {
-    height: 60vh;
-    width: 80vw;
+    width: 80%;
   }
   .nums button {
     height: 9vh;
@@ -110,6 +109,10 @@ button:focus {
   .total {
     height: 90vh;
     width: 90vw;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    border-radius: 0.2em;
   }
   .display {
     height: 8vh;
