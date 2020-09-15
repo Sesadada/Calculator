@@ -100,7 +100,7 @@ button:focus {
   }
   .nums button {
     height: 9vh;
-    background-color: whitesmoke;
+    border: 1px whitesmoke;
     font-size: 2em;
   }
   .total {
