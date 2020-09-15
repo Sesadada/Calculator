@@ -118,7 +118,7 @@ button:focus {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 375px) {
   body {
     background-color: mediumturquoise;
   }
