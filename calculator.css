@@ -24,6 +24,7 @@ body {
 }
 
 /* SERENA */
+
 .container {
   display: grid;
   min-height: 95vh;
@@ -46,12 +47,12 @@ body {
 }
 
 .display {
+  width: 25vw;
+  height: 9vh;
   border-radius: 0.2em;
-
   background-color: #e7727c;
   text-align: right;
-  padding: 0.4em;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
   margin-top: 0.4rem;
   color: white;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
