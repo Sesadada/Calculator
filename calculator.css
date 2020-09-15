@@ -118,7 +118,7 @@ button:focus {
   }
 }
 
-@media (max-width: 375px) {
+@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
   body {
     background-color: mediumturquoise;
   }
