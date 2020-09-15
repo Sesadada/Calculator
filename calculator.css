@@ -119,6 +119,9 @@ button:focus {
 }
 
 @media (max-width: 480px) {
+  body {
+    background-color: mediumturquoise;
+  }
   .container {
     height: 100%;
     width: 100%;
