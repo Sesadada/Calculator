@@ -146,6 +146,8 @@ button:focus {
     height: 9vh;
     font-size: 2em;
     border: whitesmoke;
+    background-color: #e7727c;
+    color: white;
   }
   .total {
     height: 100vh;
@@ -157,7 +159,7 @@ button:focus {
   }
   .display {
     height: 8vh;
-    width: 84vw;
+    width: 90vw;
     margin-bottom: 5vh;
 
     align-content: center;
