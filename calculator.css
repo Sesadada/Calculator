@@ -152,7 +152,7 @@ button:focus {
     height: 9vh;
     font-size: 2em;
     border: whitesmoke;
-    background-color: #e7727c;
+    background-color: tomato;
     color: white;
   }
   .total {
