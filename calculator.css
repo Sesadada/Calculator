@@ -98,7 +98,6 @@ button:focus {
 @media (max-width: 375px) {
   .container {
     background-color: mediumturquoise;
-    height: 100%;
   }
   .nums {
     width: 100%;
