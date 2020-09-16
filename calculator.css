@@ -96,8 +96,6 @@ button:focus {
 
 @media (max-width: 768px) {
   body {
-    height: 100%;
-    width: 100%;
     background-color: mediumturquoise;
   }
   .container {
@@ -129,8 +127,6 @@ button:focus {
 
 @media (max-width: 375px) {
   body {
-    height: 100%;
-    width: 100%;
     background-color: mediumturquoise;
   }
   .container {
@@ -152,8 +148,19 @@ button:focus {
     height: 9vh;
     font-size: 2em;
     border: whitesmoke;
-    background-color: tomato;
+    background: linear-gradient(186deg, #d422b1, #ffce00);
+    background-size: 400% 400%;
+    animation: GradientBackground 3s ease infinite;
     color: white;
+  }
+
+  button:hover {
+    background-color: rgb(235, 236, 157);
+    color: white;
+  }
+
+  button:focus {
+    outline: none;
   }
   .total {
     height: 100vh;
@@ -164,9 +171,12 @@ button:focus {
     align-items: center;
   }
   .display {
-    height: 8vh;
+    height: 12vh;
     width: 90vw;
     margin-bottom: 5vh;
+    background: linear-gradient(186deg, #d422b1, #ffce00);
+    background-size: 400% 400%;
+    animation: GradientBackground 3s ease infinite;
 
     align-content: center;
     align-items: center;
