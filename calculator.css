@@ -27,7 +27,8 @@ body {
 
 .container {
   display: grid;
-  min-height: 95vh;
+  min-height: 100vh;
+  min-width: 100vw;
   justify-content: center;
   align-content: center;
   align-items: center;
@@ -95,20 +96,27 @@ button:focus {
 }
 
 @media (max-width: 375px) {
-  body {
-    background-color: mediumturquoise;
-  }
   .container {
     background-color: mediumturquoise;
-    margin: auto;
+    height: 100%;
   }
   .nums {
     width: 100%;
     margin: auto;
+    background-color: mediumturquoise;
+  }
+
+  button {
+    background-color: whitesmoke;
   }
 
   .total {
     margin: auto;
+    background-color: mediumturquoise;
+  }
+
+  .display {
+    width: 100%;
   }
 }
 /*
