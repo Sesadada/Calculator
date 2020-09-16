@@ -94,6 +94,66 @@ button:focus {
   outline: none;
 }
 
+@media (max-width: 375px) {
+  body {
+    background-color: mediumturquoise;
+  }
+  .container {
+    margin: auto;
+    height: 90%;
+    width: 90%;
+    background-color: mediumturquoise;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+  .nums {
+    height: 90%;
+    width: 90%;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin: auto;
+  }
+  .nums button {
+    height: 9vh;
+    font-size: 2em;
+    border: whitesmoke;
+    background: pink;
+    color: white;
+  }
+
+  button:hover {
+    background-color: rgb(235, 236, 157);
+    color: white;
+  }
+
+  button:focus {
+    outline: none;
+  }
+  .total {
+    height: 100vh;
+    width: 100vw;
+    background-color: mediumturquoise;
+    margin: auto;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+
+  .display {
+    text-align: right;
+    padding-top: 1em;
+    padding-right: 5%;
+    margin: auto;
+    height: 10vh;
+    width: 85%;
+    margin-bottom: 5vh;
+  }
+}
+
+/*
+
 @media (max-width: 768px) {
   body {
     background-color: mediumturquoise;
@@ -125,56 +185,5 @@ button:focus {
   }
 }
 
-@media (max-width: 160px) {
-  body {
-    background-color: mediumturquoise;
-  }
-  .container {
-    height: 100%;
-    width: 100%;
-    background-color: mediumturquoise;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-  }
-  .nums {
-    height: 100%;
-    width: 100%;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-  }
-  .nums button {
-    height: 9vh;
-    font-size: 2em;
-    border: whitesmoke;
-    background: pink;
-    color: white;
-  }
 
-  button:hover {
-    background-color: rgb(235, 236, 157);
-    color: white;
-  }
-
-  button:focus {
-    outline: none;
-  }
-  .total {
-    height: 100vh;
-    width: 100vw;
-    background-color: mediumturquoise;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-  }
-  .display {
-    height: 12vh;
-    width: 90vw;
-    margin-bottom: 5vh;
-    background: pink;
-
-    align-content: center;
-    align-items: center;
-  }
-}
+*/
