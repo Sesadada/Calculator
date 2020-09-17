@@ -25,10 +25,8 @@ sign.addEventListener("click", (e) => {
 //--------------------------------cancel
 const zero = () => {
   displayNum = "";
-  displayNum2 = "";
   op1 = "";
   op2 = "";
-  result = 0;
   temp = [];
   console.log("display cleared");
 };
@@ -100,6 +98,7 @@ nums.forEach((num) => {
     } else {
       displayNum += num.value;
       display.textContent = displayNum;
+      console.log(displayNum);
     }
   });
 });
